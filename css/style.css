@@ -1,0 +1,367 @@
+
+
+
+/*My Collection of Google Fonts used in this Project:
+some change
+https://www.google.com/fonts#ChoosePlace:select/Collection:Lato|Poiret+One
+
+=)*/
+
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+
+body {
+	background-color: #1F2A4A;
+}
+
+.container {
+	margin: auto;
+}
+.text {
+	font-family: 'Poiret One', cursive;
+	color: #E9EEF4;
+}
+
+.kermingTitle {
+	line-height: 90%;
+}
+
+.title {
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+	font-size: 5em;
+	color: #89DDFF;
+	margin-top: .5em;
+	margin-bottom: .4em;
+
+}
+
+.titleHeavy {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 6rem;
+	color: #89DDFF;
+}
+
+.subtitle {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	color: #89DDFF;
+	font-family: sans-serif;
+}
+
+.mySpace {
+	margin: 1em;
+}
+
+
+
+a:visited {
+	color: #23CDCA;
+}
+
+.countries {
+	fill: none;
+    stroke: none;
+    stroke-width:1px;
+}
+
+
+
+}	/*End of Phones*/
+
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+
+}  /*End of Tablets*/
+
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+
+body {
+	background-color: #1F2A4A;
+}
+
+.container {
+	margin: auto;
+}
+.text {
+	font-family: 'Poiret One', cursive;
+	letter-spacing: 1px;
+	color: #E9EEF4;
+}
+
+.kermingTitle {
+	line-height: 90%;
+}
+
+.title {
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+	font-size: 7em;
+	color: #89DDFF;
+	margin-top: .5em;
+	margin-bottom: .4em;
+
+}
+
+.titleHeavy {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 7.2rem;
+	color: #257BC9;
+}
+
+.subtitle {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	color: #FD526F;
+	font-family: sans-serif;
+}
+
+.mySpace {
+	margin: 1em;
+}
+
+.spaceOnTop {
+	margin-top: 4em;
+}
+
+.hop {
+	margin-top: 9em;
+}
+
+a:visited {
+	color: #21B7B8;
+}
+
+a:visited {
+	color: #21B7B8;
+}
+
+.countries {
+	fill: #06294A;
+    stroke: none;
+    stroke-width:1px;
+}
+
+.legend {
+	fill: #FD526F;
+}
+
+.btn {
+	font-family: 'Poiret One', cursive;
+	font-weight: 800;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+
+.btn-info.btn-outline {
+    color: #21B7B8;
+}
+
+.btn-info.btn-outline:hover{
+    color: #1F2A4A;
+    background: #21B7B8;   
+}
+
+.btn:focus{
+    color: #1F2A4A;
+    background: #21B7B8;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+
+.selected, .selected1 {
+	color: #1F2A4A !important;
+    background: #21B7B8;
+}
+
+
+
+select.mySelect {
+	color: #21B7B8;
+	border-color: #21B7B8;
+	background-color: transparent;
+	font-family: 'Poiret One', cursive;
+	font-weight: 800;
+}
+
+select.mySelect:hover {
+	color: #1F2A4A;
+	border-color: #1F2A4A;
+	background-color: #21B7B8;
+	transition: all .5s;
+}
+
+select.mySelect:focus,select.mySelect:active {
+   box-shadow: none !important;
+}
+
+.x.axis text,
+.y.axis text {
+	fill: #21B7B8;
+	font-family: 'Poiret One', cursive;
+	font-size: .7em;
+	
+}
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #21B7B8;
+	
+}
+.xAxis_label {
+	font-family: 'Poiret One', cursive;
+	font-size: 1.3em;
+	fill: #21B7B8;
+	letter-spacing: 2px;
+	font-weight: 1000;
+}
+
+.xAxis_label.stackbar, .xAxis_label.dotplot {
+	font-family: 'Poiret One', cursive;
+	font-size: 1.2em !important;
+	fill: #21B7B8;
+	letter-spacing: 2px;
+}
+
+
+.yAxis_label {
+	font-family: 'Poiret One', cursive;
+	font-size: 1.3em;
+	fill: #21B7B8;
+	letter-spacing: 2px;
+}
+
+
+input[type="radio"] + label span, .dotToolIndex {
+	font-family: 'Poiret One', cursive;
+	font-size: 1.3em;
+	color: #21B7B8;
+	margin: 15px;
+
+}
+
+.dotToolSpecial {
+	font-family: 'Poiret One', cursive;
+	font-size: 1.3em;
+	color: #21B7B8;
+	margin: 15px;
+
+}
+
+.Between {
+	stroke: #D6AF0A;
+	stroke-width: 1;
+	stroke-dasharray: 3,3;
+}
+
+.dots1 {
+	fill: #89DDFF;
+}
+
+.dots2 {
+	fill: #257BC9;
+}
+
+.dotToolTip {
+	border-radius: 25px;
+    border: 2px solid #21B7B8;
+	width: 260px;
+	height: 180px;
+	position: absolute;	
+	left: 68%;
+	margin-left: -30px;
+	padding-top: 0px;
+	padding-left: 5px;
+}
+
+.infoDot {
+	color: #D6AF0A;
+}
+
+.infoDotF {
+	color: #C792EA;
+}
+
+.hoverMe {
+	position: absolute;	
+	left: 68%;
+	margin-left: -10px;
+	margin-top: 70px;
+	font-family: 'Poiret One', cursive;
+	font-size: 1.8em;
+	letter-spacing: 1px;
+	color: #E9EEF4;
+
+}
+
+.tooltipMap {
+	position: absolute;
+	z-index: 35;
+	border-radius: 25px;
+    border: 2px solid #21B7B8;
+	width: 260px;
+	height: 290px;
+	padding-top: 0px;
+	padding-left: 5px;
+	margin-left: 15px;
+	background-color: rgba(31, 42, 74, .80);
+
+}
+
+.tooltipScatter {
+	position: absolute;
+	z-index: 35;
+	border-radius: 25px;
+    border: 2px solid #21B7B8;
+	width: 285px;
+	height: 210px;
+	padding-top: 0px;
+	padding-left: 5px;
+	margin-left: 15px;
+	background-color: rgba(31, 42, 74, .90);
+
+}
+
+.scatterCircles {
+	fill: #257BC9;
+	opacity: .50;
+	stroke: #D6AF0A;
+	stroke-width: 0;
+
+}
+
+.tooltipStacked {
+	position: absolute;
+	z-index: 35;
+	border-radius: 25px;
+    border: 2px solid #21B7B8;
+	width: 325px;
+	height: 128px;
+	padding-top: 0px;
+	padding-left: 5px;
+	margin-left: 15px;
+	background-color: rgba(31, 42, 74, .90);
+
+}
+
+#stackLegend {
+	margin-left: 10px;
+	position: absolute;
+	left: 80%;
+}
+
+
+} /*End of Desktop*/

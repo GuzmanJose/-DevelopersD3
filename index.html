@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	<script src="https://d3js.org/queue.v1.min.js"></script>
+	<script src="https://d3js.org/topojson.v1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.9.0/d3-legend.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Developers D3 Improvement</title>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+<div class="container">
+
+<!-- https://www.statwing.com/demos/dev-survey#workspaces/2496     2015!!!  -->
+
+
+<div class="row">
+<div class="col-md-12">
+<p class="title kermingTitle">Developers <br>Survey <span class="titleHeavy">2015</span></p>   <!-- [2017 -1] -->
+</div>
+</div>
+
+<div class="row spaceOnTop">   <!-- Row map -->
+<div class="col-md-4">
+<h1 class="subtitle">The Community</h1>
+<p class="text spaceOnTop"><a href="http://stackoverflow.com/">Stack Overflow</a> is an online community 
+where programmers can learn and share their knowledge. Each year they conduct a survey 
+trying to reveal trends, likes and the perspective of different matters between developers around the world.</p>
+<p class="text">This year more than 25,000 developers from the Stack Overflow users
+answered the survey giving us a good look inside their community.</p>
+<p class="text">But like everything surveys are not perfect. The segment of the developers’ population who don’t 
+speaks English or where developers have an increased likelihood of being women such as Asian countries like
+South Korea and India are underrepresented. 
+</p>
+<p class="text">In this map we skip developers who prefer not to disclose their employment status.</p>
+</div>
+<div class="col-md-8 spaceOnTop hop" id="worldMap"></div>
+</div>   <!-- row map -->
+
+
+
+
+
+
+<div class="row spaceOnTop hop">	<!-- row scatter -->
+
+<div class="col-md-8" id="scatter"></div>
+<div class="col-md-3">
+<h1 class="subtitle">Industries</h1>
+<p class="text spaceOnTop">
+Most of the developers who answered this survey are from the United States,
+so it's a little hard to visualize the behavior and characteristics in the 
+countries with few developers.</p>
+<p class="text">But we can appreciate what types of industries are favorable 
+for developers in each country and whether they love
+or hate their jobs.</p>
+<p class="text">We are just showing the top countries in each industry.</p>
+
+<div class="row spaceOnTop">
+<div class="col-md-8">
+<select class="form-control mySelect" id="selectScatter">
+<option value="Software_Products">Software Products</option>
+<option value="Web_Services">Web Services</option>
+<option value="Finance_Banking">Finance Banking</option>
+<option value="Internet">Internet</option>
+<option value="Consulting">Consulting</option>
+<option value="Media_Advertising">Media Advertising</option>
+<option value="Healthcare">Healthcare</option>
+<option value="Education">Education</option>
+<option value="Telecommunications">Telecommunications</option>
+<option value="Manufacturing">Manufacturing</option>
+<option value="Government">Government</option>
+<option value="Consumer_Products">Consumer Products</option>
+<option value="Retail">Retail</option>
+<option value="Gaming">Gaming</option>
+<option value="Defense">Defense</option>
+<option value="Aerospace">Aerospace</option>
+<option value="Non_Profit">Foundation Non-Profit</option>
+<option value="Student">Student</option>
+</select>	
+</div>
+</div>
+</div>
+
+</div>   <!-- row scatter -->
+
+<div class="row spaceOnTop loveButtons">
+<div class="btn-group col-md-10 col-md-offset-1">
+<button type="button" class="btn btn-info btn-outline" id="I_love_my_job">Love My Job</button>
+<button type="button" class="btn btn-info btn-outline" id="I_like_my_job">Like my Job</button>
+<button type="button" class="btn btn-info btn-outline" id="Somewhere_in_the_middle">Somewhere in the middle</button>
+<button type="button" class="btn btn-info btn-outline" id="Dont_like_my_job">Don't like my Job</button>
+<button type="button" class="btn btn-info btn-outline" id="I_hate_my_job">Hate My Job</button>	
+</div>
+</div>  <!-- row scatter Buttons -->	
+
+
+
+
+
+<div class="row spaceOnTop hop">	<!-- stacked row -->
+<div class="row">
+<div class="col-md-4 ">
+<h1 class="subtitle">Compensation</h1>
+</div>
+</div>
+<div class="row spaceOnTop">
+<div class="col-md-5">
+<p class="text">Here we are showing how much the developers are earning in  each country. 
+We can also appreciate the top ten countries that are earning above $160,000 or less than 
+$20,000 dollars. If we discard places like the United States, India and the United Kingdom 
+the results are pretty interesting.</p>
+<p class="text">One thing that we must appreciate are the spikes in the different sets of bars,
+like India and his incredible amount of people who earn less than $20,0000 dollars, and relate 
+it with the fact that India was the country with more software products developers in the 
+<a href="#scatter">industries’ scatter plot</a>.</p>
+</div>
+
+<div class="col-md-5 col-md-offset-1">
+<p class="text">This chart reveals in what countries the developers are having a significant compensation through 
+their services and what other countries are receiving a short amount of money within the developers’ 
+community.</p>
+<p class="text">Countries like <em>India, Poland, Russia, Spain and Brazil</em> have a large amount of developers 
+who are getting a low payment rate, and countries like <em>Australia, Switzerland, Canada and Germany</em> 
+have the highest payment rate between developers.</p>
+
+</div>
+
+	
+</div>
+
+<div class="row spaceOnTop hop">
+<div class="btn-group col-md-3 col-md-offset-1">
+<input type="radio" name="mode" value="grouped" id="grouped" checked>
+<label for="grouped"><span>Grouped</span></label> 
+<input type="radio" name="mode" value="stacked" id="stacked">
+<label for="stacked"><span>Stacked</span></label>
+</div>
+
+<div class="col-md-7 col-md-offset-1">
+<div class="btn-group">
+<button type="button" class="btn btn-info btn-outline" id="Less_than_twentyK">Less Than $20,000</button>
+<button type="button" class="btn btn-info btn-outline" id="More_than_HsixtyK">More Than $160,000</button>	
+</div>
+</div>
+</div>
+
+<div class="row spaceOnTop">
+<div class="col-md-9" id="stackedGraph"></div>
+
+<div class="col-md-2" id="stackLegend"></div>
+</div>
+</div>  <!-- stacked row -->
+
+
+
+
+<div class="row spaceOnTop"> <!-- Dot Plot graph -->
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<h1 class="subtitle text-center">Language</h1>
+<p class="text spaceOnTop">There are different types of languages that a developer can choose from. 
+So it’s always a very important matter to know which are the most used and popular among 
+them. And because of the fast changing nature of this environment it’s necessary to know 
+which of them are going to have a strong presence in the <br>near future.</p>
+<p class="text">Languages like <em>JavaScript, Php, Sql, Java</em> and <em>Python</em> are the most used by 
+the developers in this survey. Most of them are suffering by a loss of users in the near 
+future with the exception of Python.
+There are also some languages that are gaining popularity among this community of developers 
+like <em>Node.js, Go, IOS</em> <br>and <em>Ruby</em>.</p>
+</div>
+</div>
+
+<div class="row spaceOnTop">
+<div class="col-md-2 col-md-offset-1">
+<select class="form-control mySelect" id="selectDot">
+<option value="JavaScript">JavaScript</option>
+<option value="Dart">Dart</option>
+<option value="f">F#</option>
+<option value="Go">Go</option>
+<option value="Hadoop">Hadoop</option>
+<option value="Haskell">Haskell</option>
+<option value="iOS">iOS</option>
+<option value="Java">Java</option>
+<option value="lamp">LAMP</option>
+<option value="Matlab">Matlab</option>
+<option value="MongoDB">MongoDB</option>
+<option value="Node_js">Node.js</option>
+<option value="Objective_C">Objective-C</option>
+<option value="Perl">Perl</option>
+<option value="php">PHP</option>
+<option value="Python">Python</option>
+<option value="r">R</option>
+<option value="Redis">Redis</option>
+<option value="Ruby">Ruby</option>
+<option value="Rust">Rust</option>
+<option value="Salesforce">Salesforce</option>
+<option value="Scala">Scala</option>
+<option value="Sharepoint">Sharepoint</option>
+<option value="Spark">Spark</option>
+<option value="sql">SQL</option>
+<option value="Swift">Swift</option>
+<option value="Visual_Basic">Visual Basic</option>
+<option value="Windows_Phone">Windows Phone</option>
+<option value="Wordpress">Wordpress</option>
+</select>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div id="dotPlot">
+<p class="hoverMe">&lt; hover the dots &gt;</p>
+</div>
+</div>
+</div>
+
+</div> <!-- Dot Plot graph -->
+
+
+
+
+<div class="row">     <!-- Conclusion -->
+<div class="col-md-6 col-md-offset-3 spaceOnTop hop">
+<h1 class="subtitle text-center">Conclusion</h1>
+<p class="text text-center spaceOnTop">Through all the visualizations of this data, we could learn a lot about this 
+developers’ community. We learned that the countries that use more this medium to communicate and help 
+each other are <em>United States, India, United Kingdom</em> and <em>Germany</em>. And how this countries overachieve in 
+different industries like India in software developing, Germany in manufacturing and United Kingdom in 
+Finance/Banking and Gaming.</p>
+<p class="text text-center">We could notice that in places like <em>Australia, Switzerland, Canada</em> and <em>Denmark</em> 
+are in the top ten countries with the highest pay rate and <em>Poland, Russia, Spain</em> and <em>Brazil</em> are between the 
+ones with the lowest.</p>
+<p class="text text-center">And if you’re a developer who is looking for a new language to learn there are some clear favorites in this community like <em>JavaScript, Sql, Php</em>, and <em>Java</em> that even with lost of followers in the near future they keep with a strong amount of users with the exception of <em>python</em> that is one of the favorites in this community with a gain of popularity in the near future.</p>
+<p class="text text-center">If you want to take a closer look to this data you can find it 
+<a href="https://drive.google.com/file/d/0Bzd_CzYvUxE5U1NSWnA2SFVKX00/view">here</a>.</p>	
+</div>
+	
+</div>      <!-- Conclusion -->
+
+
+
+
+
+
+
+
+</div>  <!-- Container -->
+
+</div>	<!-- Container Fluid -->
+
+
+
+		<!-- FOOTER -->
+
+<div class="row mySpace spaceOnTop hop">
+<div class="col-md-12 text-center">
+<footer> <p class="text">Coded with <small>&hearts;</small> using <a href="http://getbootstrap.com/">Bootstrap</a>
+&amp; <a href="https://d3js.org/">D3</a></p>
+<p class="text"><small>By</small></p></footer>
+<p class="text"><small>José Manuel Guzman Fierro</small></p></footer>
+</div>
+</div>
+		<!-- END FOOTER -->
+
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/scatterplot.js"></script>
+<script type="text/javascript" src="js/stackedbar.js"></script>
+<script type="text/javascript" src="js/dotplot.js"></script>
+
+</body>
+</html>
