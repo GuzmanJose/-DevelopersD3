@@ -20,4 +20,4 @@ I use D3.js for the creation of the charts. D3 is an amazing and limitless tool 
 
 ## Link
 
-[Take a look at it!](http://guzmanjose.github.io/Developers2015/)
+[Take a look at it!!](http://guzmanjose.github.io/Developers2015/)
